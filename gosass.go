@@ -1,7 +1,6 @@
 package gosass
 
-// #cgo CFLAGS: -I./libs/include
-// #cgo LDFLAGS: -L./libs/lib -lsass
+// #cgo LDFLAGS: -lsass
 // #include <sass/context.h>
 import "C"
 
