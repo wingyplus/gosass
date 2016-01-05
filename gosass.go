@@ -12,5 +12,6 @@ func Render(scss string) ([]byte, error) {
 	C.sass_compiler_execute(compiler)
 	css := C.GoString(C.sass_context_get_output_string((*C.struct_Sass_Context)(unsafe.Pointer(ctx))))
 	C.sass_delete_compiler(compiler)
+	C.sass_delete_data_context(ctx)
 	return []byte(css), nil
 }
